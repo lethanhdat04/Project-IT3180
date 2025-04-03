@@ -5,7 +5,7 @@ Project-IT3180/
 ├── docs/               # Documentation files
 ├── tests/              # Test cases and scripts
 ├── assets/             # Images and other assets
-├── scripts/tools            # Utility scripts
+├── scripts/tools       # Utility scripts
 ├── config/             # Configuration files
 ├── changelog/          # Changelog and version history
 ├── .gitignore          # Git ignore rules
