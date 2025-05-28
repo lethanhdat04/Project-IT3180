@@ -23,6 +23,11 @@ public class NhanKhauController {
     @Autowired
     private HoKhauService hoKhauService;
 
+    @GetMapping
+    public List<NhanKhauDTO> getAllNhanKhau() {
+        return nhanKhauService.getDanhSachNhanKhau();
+    }
+
     @GetMapping("/{maNhanKhau}")
     public NhanKhauDTO getNhanKhau(@PathVariable Integer maNhanKhau) {
         return nhanKhauService.getNhanKhau(maNhanKhau);

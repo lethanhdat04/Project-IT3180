@@ -25,6 +25,11 @@ public class NhanKhauService {
     @Autowired
     private DtoMapper dtoMapper;
 
+    public List<NhanKhauDTO> getDanhSachNhanKhau() {
+        List<NhanKhau> danhSachNhanKhau = nhanKhauRepository.findAll();
+        return dtoMapper.mapList(danhSachNhanKhau, NhanKhauDTO.class);
+    }
+
     public NhanKhauDTO getNhanKhau(Integer maNhanKhau) {
         NhanKhau nhanKhau = nhanKhauRepository.findById(maNhanKhau).orElseThrow(() -> new RuntimeException("NhanKhau not found"));
         return dtoMapper.map(nhanKhau, NhanKhauDTO.class);
