@@ -86,6 +86,13 @@ public class HoaDonService {
         return dtoMapper.map(saved, HoaDonDTO.class);
     }
 
+
+    @Transactional
+    public void xoaHoaDon(Integer maHoaDon) {
+        HoaDon hoaDon = hoaDonRepository.findById(maHoaDon).get();
+        hoaDonRepository.delete(hoaDon);
+    }
+
     public List<HoaDonDTO> timKiemHoaDon(String tuKhoa) {
         if (tuKhoa == null || tuKhoa.trim().isEmpty()) {
             List<HoaDon> hoaDons = hoaDonRepository.findAll();

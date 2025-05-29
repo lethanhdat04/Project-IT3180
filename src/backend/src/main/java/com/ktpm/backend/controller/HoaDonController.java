@@ -61,5 +61,15 @@ public class HoaDonController {
         }
     }
 
+    @DeleteMapping("/delete/{maHoaDon}")
+    public ResponseEntity<Void> deleteHoaDon(@PathVariable Integer maHoaDon) {
+        try {
+            hoaDonService.xoaHoaDon(maHoaDon);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
 
 }
